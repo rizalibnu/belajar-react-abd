@@ -21,7 +21,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <React.Fragment>
       <div className="App">
         <Header>
           <img src={logo} className="App-logo" alt="logo" />
@@ -39,7 +39,7 @@ const App = () => {
         </Header>
       </div>
       <div>footer</div>
-    </>
+    </React.Fragment>
   );
 }
 
