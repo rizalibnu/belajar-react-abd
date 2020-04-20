@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import Greeting from './Greeting';
+import Modal from './Modal';
 import './App.css';
 
 const getName = (name) => name;
@@ -14,7 +15,9 @@ const Header = (props) => {
 };
 
 const App = () => {
-  const handleClick = () => alert('showing alert')
+  const [showModal, setShowModal] = React.useState(false);
+  const handleClick = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
   const budi = {
     kelas: '1',
     tinggi: '160cm',
@@ -25,7 +28,7 @@ const App = () => {
       <div className="App">
         <Header>
           <img src={logo} className="App-logo" alt="logo" />
-          <Greeting text="halo semuanya apa kabar?" isLarge count={7} />
+          <Greeting text="halo semuanya apa kabar?" handleClick={handleClick} isLarge day={7} />
           <Greeting text="kabar baik" handleClick={handleClick} people={budi}  />
           <a
             //class="App-link"
@@ -36,6 +39,9 @@ const App = () => {
           >
             Learn React {getName('John Doe')}
           </a>
+          {showModal && (
+            <Modal handleClose={handleClose} />
+          )}
         </Header>
       </div>
       <div>footer</div>

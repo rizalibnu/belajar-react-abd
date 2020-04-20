@@ -5,6 +5,9 @@
 - Components and Props
 - Fragments
 
+## Learn 2
+- State and Introduction Lifecycle
+
 <br />
 <br />
 <br />
